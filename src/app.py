@@ -9,9 +9,6 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from helpers.document_loader import get_db
 from helpers.chat_history import get_memory
 
-# generate a unique session ID for every conversation
-SESSION_ID = str(uuid.uuid4())
-
 # Embeddings are loaded from the Milvus collection, db
 db = get_db()
 
@@ -73,12 +70,19 @@ conversational_rag_chain = RunnableWithMessageHistory(
 
 ##### CHAT LOOP #####
 while True:
+    conversation_session_id = str(uuid.uuid4())
+    if (
+        session_id := input(
+            "Enter session ID if you want to continue the conversation, or press Enter to start a new conversation: "
+        )
+    ) != "":
+        conversation_session_id = session_id
     query = input("You: ")
     if query == "q":
         break
     output = conversational_rag_chain.invoke(
         {"input": query},
-        config={"configurable": {"session_id": SESSION_ID}},
+        config={"configurable": {"session_id": conversation_session_id}},
     )["answer"]
     print(f"User: {query}")
     print(f"Bot: {output}")
