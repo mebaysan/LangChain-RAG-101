@@ -1,5 +1,6 @@
 import uuid
 
+from dotenv import load_dotenv
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables.history import RunnableWithMessageHistory
@@ -8,6 +9,8 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 
 from helpers.document_loader import get_db
 from helpers.chat_history import get_memory
+
+load_dotenv()
 
 # Embeddings are loaded from the Milvus collection, db
 db = get_db()

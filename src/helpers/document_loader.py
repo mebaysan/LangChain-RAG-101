@@ -3,10 +3,12 @@ from langchain_community.embeddings import OllamaEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from datetime import datetime
+
+from helpers.conf import APP_CONF
 from helpers.utils import wip_time
 
-URI = "tcp://localhost:19530"
-COLLECTION_NAME = "baysan_demo"
+URI = f"tcp://{APP_CONF.MILVUS_HOST}:{APP_CONF.MILVUS_PORT}"
+COLLECTION_NAME = APP_CONF.MILVUS_COLLECTION_NAME
 EMBEDDING_MODEL = OllamaEmbeddings(model="llama3")
 
 

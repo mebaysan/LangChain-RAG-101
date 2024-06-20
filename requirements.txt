@@ -3,3 +3,4 @@ langchain-community
 langchain-postgres
 psycopg-binary
 langchain-milvus
+python-dotenv
