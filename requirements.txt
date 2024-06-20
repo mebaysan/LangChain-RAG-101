@@ -1,0 +1,5 @@
+langchain
+langchain-community
+langchain-postgres
+psycopg-binary
+langchain-milvus
