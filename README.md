@@ -9,3 +9,11 @@ Technologies used are:
 - LangChain
 - Postgres
 - Docker
+
+# Usage
+
+You can run `init.sh` to run LLAMA-3:8B by OLLAMA and needed services as Docker containers. Obviously, you havce to have OLLAMA and Docker.
+
+You can run `src/app.py` to communicate with the LLM.
+
+You also can enhance & improve [document_loader.py](./src/helpers/document_loader.py) to embed your own documents.
