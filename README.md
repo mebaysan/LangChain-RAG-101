@@ -21,3 +21,9 @@ You can run `src/app.py` to communicate with the LLM.
 You also can enhance & improve [document_loader.py](./src/helpers/document_loader.py) to embed your own documents.
 
 I also added a package [`experimental`](./src/experimental/) to manually test some functions.
+
+# Resources
+
+- [LLAMA3 ile Dokümanlarınızla Konuşun! LangChain ile RAG'a Giriş (YouTube)](https://youtu.be/F9GEHv2pSfw?si=oKV_ct_8TZSwMjcO)
+- [Sirens of The Age: Private LLM(s) | LangChain 101 (Medium)](https://medium.com/@mebaysan/sirens-of-the-age-private-llm-s-langchain-101-f11a116fa4af)
+- [RAG-101 | LangChain Presentation](https://www.canva.com/design/DAGItlraYmw/DH3Y70A-ZtpSns9FmVPo0Q/edit?utm_content=DAGItlraYmw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
