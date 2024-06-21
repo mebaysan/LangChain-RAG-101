@@ -71,15 +71,16 @@ conversational_rag_chain = RunnableWithMessageHistory(
 )
 
 
+#### Interaction ####
+conversation_session_id = str(uuid.uuid4())
+if (
+    session_id := input(
+        "Enter session ID if you want to continue the conversation, or press Enter to start a new conversation: "
+    )
+) != "":
+    conversation_session_id = session_id
 ##### CHAT LOOP #####
 while True:
-    conversation_session_id = str(uuid.uuid4())
-    if (
-        session_id := input(
-            "Enter session ID if you want to continue the conversation, or press Enter to start a new conversation: "
-        )
-    ) != "":
-        conversation_session_id = session_id
     query = input("You: ")
     if query == "q":
         break
